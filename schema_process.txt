@@ -1,0 +1,44 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+: a owl:Ontology ;
+    rdfs:label   "Toy Human Ontology" ;
+    rdfs:comment "An example of schema to describe people and for teaching purposes" ;
+    owl:priorVersion <http://www.inria.fr/2007/09/11/humans.rdfs#> .
+
+:Process a rdfs:Class ;
+    rdfs:label "process"@en ;
+    rdfs:comment "a group of tasks or subprocesses"@en .
+
+:Subprocess a rdfs:Class ;
+    rdfs:label "subprocess"@en ;
+    rdfs:comment "a smaller group of tasks belonging to a more general process, required for that process to operate correctly."@en ;
+    rdfs:subClassOf :Process .
+
+:status a rdf:Property ;
+    rdfs:label "process status"@en ;
+    rdfs:comment "current status of a process"@en ;
+    rdfs:domain :Process, :Subprocess ;
+    rdfs:range :NOT_STARTED, :IN_PROGRESS, :FINISHED, :CANCELLED .
+
+:NOT_STARTED a rdf:value ;
+    rdfs:label "not started"@en ;
+    rdfs:comment "process not started"@en ;
+    rdfs:domain :status .
+
+:IN_PROGRESS a rdf:value ;
+    rdfs:label "in progress"@en ;
+    rdfs:comment "process in progress"@en ;
+    rdfs:domain :status .
+
+:FINISHED a rdf:value ;
+    rdfs:label "finished"@en ;
+    rdfs:comment "process finished"@en ;
+    rdfs:domain :status .
+
+:CANCELLED a rdf:value ;
+    rdfs:label "cancelled"@en ;
+    rdfs:comment "process cancelled"@en ;
+    rdfs:domain :status .
