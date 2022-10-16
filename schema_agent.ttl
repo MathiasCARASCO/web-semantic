@@ -2,11 +2,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://www.w3.org/ns/prov#> .
 
 : a owl:Ontology ;
-    rdfs:label   "Toy Human Ontology" ;
-    rdfs:comment "An example of schema to describe people and for teaching purposes" ;
-    owl:priorVersion <http://www.inria.fr/2007/09/11/humans.rdfs#> .
+    rdfs:label   "Agent Ontology" ;
+    rdfs:comment "Schema to describe agents and their properties." .
 
 :Agent a rdfs:Class ;
     rdfs:label "agent"@en;
